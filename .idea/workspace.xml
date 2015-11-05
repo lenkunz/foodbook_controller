@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3499e618-480a-49b5-b4b6-47edc0162612" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/Adapter/DESSessionAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/PhotoManagement/Adapter/LocalPhotoAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/PhotoManagement/Adapter/PhotoAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/foodbook/Parser/json/PhotoItemParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/foodbook/Parser/json/ProfileParser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/SQLAdapter/SQLSessionAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/Utils/TokenProvider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/foodbook/Parser/json/UserParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/foodbook/Parser/rowset/RowsetParser.java" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/foodbook/Parser/rowset/RowsetParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/SQLAdapter/SQLUserAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/SQLAdapter/SQLUserAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/Adapter/UserAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/Adapter/UserAdapter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/UserAuthentication.java" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/UserManagement/UserAuthentication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/PhotoManagement/Adapter/LocalPhotoAdapter.java" afterPath="$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/PhotoManagement/Adapter/LocalPhotoAdapter.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="foodbook.iws" />
@@ -61,12 +50,10 @@
       <file leaf-file-name="LocalPhotoAdapter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/PhotoManagement/Adapter/LocalPhotoAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.33090025">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.2895377">
+              <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#381#382#0" expanded="true" />
-                <element signature="e#408#409#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1299,7 +1286,7 @@
       <created>1446681850382</created>
       <option name="number" value="Default" />
       <updated>1446681850382</updated>
-      <workItem from="1446681853791" duration="40671000" />
+      <workItem from="1446681853791" duration="41307000" />
     </task>
     <task id="LOCAL-00001" summary="Initial">
       <created>1446728569381</created>
@@ -1313,11 +1300,17 @@
       <option name="project" value="LOCAL" />
       <updated>1446728865215</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial">
+      <created>1446739777993</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1446739777993</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40671000" />
+    <option name="totallyTimeSpent" value="41307000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1879,12 +1872,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tk/lenkyun/foodbook/server/PhotoManagement/Adapter/LocalPhotoAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33090025">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2895377">
+          <caret line="14" column="50" selection-start-line="14" selection-start-column="50" selection-end-line="14" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#381#382#0" expanded="true" />
-            <element signature="e#408#409#0" expanded="true" />
           </folding>
         </state>
       </provider>

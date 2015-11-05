@@ -3,6 +3,7 @@ package tk.lenkyun.foodbook.server.PhotoManagement.Adapter;
 import org.springframework.stereotype.Repository;
 import tk.lenkyun.foodbook.foodbook.Domain.Data.Photo.PhotoContent;
 
+import java.io.PrintWriter;
 import java.net.URI;
 
 /**
@@ -12,6 +13,7 @@ import java.net.URI;
 public class LocalPhotoAdapter implements PhotoAdapter {
     @Override
     public URI postPhoto(PhotoContent photoContent) {
+        PrintWriter writer = new PrintWriter("./");
         return null;
     }
 
