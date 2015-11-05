@@ -8,14 +8,18 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Repository;
 import tk.lenkyun.foodbook.foodbook.Domain.Data.Authentication.AuthenticationInfo;
 import tk.lenkyun.foodbook.foodbook.Domain.Data.Authentication.UserAuthenticationInfo;
+import tk.lenkyun.foodbook.foodbook.Domain.Data.Photo.PhotoItem;
+import tk.lenkyun.foodbook.foodbook.Domain.Data.User.Profile;
 import tk.lenkyun.foodbook.foodbook.Domain.Data.User.User;
 import tk.lenkyun.foodbook.foodbook.Domain.Operation.RegistrationHelper;
 import tk.lenkyun.foodbook.foodbook.Parser.rowset.RowsetParser;
 import tk.lenkyun.foodbook.foodbook.Parser.rowset.UserParser;
 import tk.lenkyun.foodbook.server.UserManagement.Adapter.UserAdapter;
+import tk.lenkyun.foodbook.server.UserManagement.Exception.DuplicateUserException;
 
 import javax.sql.DataSource;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -119,22 +123,44 @@ public class SQLUserAdapter extends SimpleJdbcDaoSupport implements UserAdapter 
                 .append(" WHERE " + UserParser.UID + " = ? ");
 
         ArrayList<Object> parameters = new ArrayList<Object>();
-        SqlRowSet result = getJdbcTemplate().queryForRowSet(query.toString(), parameters);
+        parameters.addAll(Arrays.asList(RowsetParser.getValueList(list)));
+        parameters.add(Long.parseLong(user.getId()));
 
-        if(result.next()){
-            return new UserParser().from(result);
-        }
+        SqlRowSet result = getJdbcTemplate().queryForRowSet(query.toString(), parameters.toArray());
 
-        return null;
+        return getUserById(user.getId());
     }
 
     @Override
-    public User createUser(RegistrationHelper registrationHelper) {
-        return null;
+    public User createUser(RegistrationHelper registrationHelper, PhotoItem profile_picture, PhotoItem profile_cover) {
+        if(getUserByUsername(registrationHelper.getUsername()) != null)
+            throw new DuplicateUserException("");
+
+        StringBuilder query = new StringBuilder();
+        User user = new User(null, registrationHelper.getUsername(),
+                new Profile(registrationHelper.getFirstname(), registrationHelper.getLastname(),
+                    profile_picture));
+        Map<String, Object> list = new UserParser().parse(user);
+
+        query.append("INSERT INTO ")
+                .append(env.getProperty("database.table.user"))
+                .append(" (" + RowsetParser.getNameList(list) + ")")
+                .append(" VALUES (" + RowsetParser.getValueBlanker(list) + ")");
+
+        SqlRowSet result = getJdbcTemplate().queryForRowSet(query.toString(), RowsetParser.getValueList(list));
+
+        return getUserByUsername(registrationHelper.getUsername());
     }
 
     @Override
     public void removeUser(String id) {
+        StringBuilder query = new StringBuilder();
 
+        query.append("DELETE FROM ")
+                .append(env.getProperty("database.table.user"))
+                .append(" WHERE " + UserParser.UID + " = ?");
+
+        Object[] parameters = {Long.parseLong(id)};
+        SqlRowSet result = getJdbcTemplate().queryForRowSet(query.toString(), parameters);
     }
 }

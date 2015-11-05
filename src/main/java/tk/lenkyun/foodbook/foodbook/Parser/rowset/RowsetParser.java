@@ -41,4 +41,13 @@ public abstract class RowsetParser<E extends FoodbookType> {
         }
         return objects.toArray();
     }
+
+    public static String getValueBlanker(Map<String, Object> list){
+        ArrayList<String> objects = new ArrayList<String>();
+        for(Map.Entry<String, Object> map : list.entrySet()){
+            if(map.getKey() != null)
+                objects.add("?");
+        }
+        return String.join(",", objects);
+    }
 }
