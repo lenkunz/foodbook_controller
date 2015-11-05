@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <!-- Referral : http://stackoverflow.com/questions/14501262/best-way-of-database-pooling-in-spring-for-production-system -->
+    <bean id="mainDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClassName}" />
+        <property name="jdbcUrl" value="${jdbc.main_url}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+        <property name="acquireIncrement" value="1" />
+        <property name="checkoutTimeout" value="3000" />
+        <property name="idleConnectionTestPeriod" value="5" />
+        <property name="maxIdleTime" value="3" />
+        <property name="maxPoolSize" value="30" />
+        <property name="minPoolSize" value="1" />
+        <property name="numHelperThreads" value="1000" />
+        <property name="overrideDefaultUser" value="${jdbc.username}" />
+        <property name="overrideDefaultPassword" value="${jdbc.password}" />
+        <property name="propertyCycle" value="3" />
+        <property name="statementCacheNumDeferredCloseThreads" value="1" />
+        <property name="testConnectionOnCheckin" value="true" />
+        <property name="unreturnedConnectionTimeout" value="7" />
+    </bean>
+</beans>
